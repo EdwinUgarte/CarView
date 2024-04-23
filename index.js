@@ -1,11 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require('./src/routes/carRoutes')
+const cors  = require('cors')
 require("dotenv").config();
 
 
 const app = express();
-const port = process.env.PORT;
+const port =  process.env.PORT || 3000;
+
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"]
+}));
+
 
 const conectBD = async () => {
   try {
