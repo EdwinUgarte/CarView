@@ -9,7 +9,7 @@ const carSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    año: {
+    year: {
         type: Number,
         required: true
     },
